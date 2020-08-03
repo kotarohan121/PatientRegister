@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <UserSecretsId>5bf39f57-1a8e-4ece-98bf-e09ec579e70c</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="2.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="2.1.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
+    <PackageReference Include="NLog" Version="4.7.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="iMedOneDB">
+      <HintPath>..\..\..\..\Users\P10433824\Downloads\TC Coding Assignment\TC Coding Assignment\iMedOneDB.DLL</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

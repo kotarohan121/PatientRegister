@@ -1,0 +1,17 @@
+● src
++---● app
+|   +--● patients
+|   |  |--patients.component.ts|.html|.css
+|   |  +--● patient
+|   |  |  |--patient.component.ts|.html|.css
+|   |  |
+|   |  +--● patientlist
+|   |  |  |--patientlist.component.ts|.html|.css
+|   |  |
+|   |  +--● shared
+|   |     |--patient.service.ts
+|   |     |--patient.model.ts
+|   |
+|   |--app.module.ts
+|
+|--index.html (cdn path for bootstrap & fa icons)

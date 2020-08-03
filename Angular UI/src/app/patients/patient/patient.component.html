@@ -1,0 +1,74 @@
+<form #form="ngForm" autocomplete="off" (submit)="onSubmit(form)">
+  <input type="hidden" name="Id" [value]="service.formData.Id">
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text bg-white">
+          <i class="fas fa-user-circle" [class.green-icon]="Name.valid" [class.red-icon]="Name.invalid && Name.touched"></i>
+        </div>
+      </div>
+      <input name="Name" #Name="ngModel" [(ngModel)]="service.formData.Name" class="form-control"
+        placeholder="First Name"  required maxlength="30" appAlphabetOnly>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <div class="input-group-text bg-white">
+          <i class="fas fa-user-circle"  [class.green-icon]="SurName.valid" [class.red-icon]="SurName.invalid && SurName.touched"></i>
+        </div>
+      </div>
+      <input name="SurName" #SurName="ngModel" [(ngModel)]="service.formData.SurName" 
+      class="form-control" placeholder="Last Name" required maxlength="30" appAlphabetOnly>
+    </div>
+  </div>
+  
+    <div class="form-group">
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <div class="input-group-text bg-white">
+            <i class="fa fa-calendar"  [class.green-icon]="DOB.valid" [class.red-icon]="DOB.invalid && DOB.touched"></i>
+          </div>
+        </div>
+        <input  name="DOB" #DOB="ngModel" [(ngModel)]="service.formData.DOB" class="form-control"
+          placeholder="Date of Birth" bsDatepicker  [minDate]="minDate"
+          [maxDate]="maxDate"
+           required >
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="input-group">
+        <select  name="Gender" #Gender="ngModel" [(ngModel)]="service.formData.Gender" class="form-control" >
+          <option value= "0" selected disabled>Select Gender</option>
+          <option *ngFor="let gender of genders"  > {{gender.Name}} </option>                   
+        </select>  
+        </div>
+    </div>
+   
+
+    <div class="form-group">     
+      <div class="input-group"> 
+      <select name="StateId" [(ngModel)]="service.formData.StateId" class="form-control" (change)="onSelect($event.target.value)" >
+        <option value= "0"  selected disabled>Select State</option>
+        <option *ngFor="let state of states" value="{{state.Id}}">{{state.Name}}</option>
+      </select>
+    </div>
+    </div>
+
+   
+
+    <div class="form-group">   
+      <div class="input-group"> 
+      <select name="CityId" #CityId="ngModel" [(ngModel)]="service.formData.CityId" class="form-control">
+        <option value= "0" selected disabled>Select City</option>
+        <option *ngFor="let city of cities" value="{{city.Id}}">{{city.Name}}</option>
+      </select>
+    </div>
+    </div>
+
+  
+  <div class="form-group">
+    <button class="btn btn-primary btn-lg btn-block" type="submit" [disabled]="form.invalid"><i class="fas fa-database"></i> Submit</button>
+  </div>
+</form>
